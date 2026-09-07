@@ -1,4 +1,4 @@
--- Open Source Script AutoFarm murder mystery 2 Summer update 202667
+-- Open Source Script AutoFarm murder mystery 2 Summer update 202660
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/script-create/Anti-afk/refs/heads/main/Autofarm.lua"))()
 
